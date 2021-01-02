@@ -11,4 +11,4 @@ set tabstop=4  " number of spaces that <Tab> in file uses
 set splitright  " new window is put right of the current one
 set spell  " enable spell checking
 set antialias  " Mac OS X: use smooth, antialiased fonts
-	
+set hlsearch " enables search highlighting    

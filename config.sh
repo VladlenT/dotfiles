@@ -14,6 +14,6 @@ alias ?=duckduckgo
 
 # Ignore duplicates in command history
 export HISTCONTROL=ignoredups
-
+export PS1="\[\033[0;32m\]$\[\033[0m\] "
 export PATH=/mnt/sda1/repos/github.com/VladlenT/dotfiles/scripts:$PATH
 

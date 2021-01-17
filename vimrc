@@ -12,3 +12,5 @@ set splitright  " new window is put right of the current one
 set spell  " enable spell checking
 set antialias  " Mac OS X: use smooth, antialiased fonts
 set hlsearch " enables search highlighting    
+set scrolloff=5 " always show 5 line around the cursor
+set incsearch " while typing a search command, show where the pattern, as it was typed so far, matches.  The matched string is highlighted. 

@@ -23,4 +23,4 @@ export PATH=$PWD/scripts:$PATH
 export PATH=$PATH:/usr/local/go/bin
 
 # creating Go workspace
-export GOPATH=/mnt/sda1/_projects/_go
+export GOPATH=/mnt/sda1/_projects/_go/_workspace

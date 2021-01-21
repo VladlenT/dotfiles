@@ -1,0 +1,34 @@
+*.prettierignore
+*.env
+
+# Images
+
+*.jpg
+*.png
+*.gif
+*.jpeg
+*.webp
+*.info
+*.ico
+*.txt
+*.svg
+
+# Fonts
+
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.fnt
+*.eot
+
+#Bazel
+/bazel-out
+*.bazel
+
+# Files
+*.dart
+*.rs
+*.toml
+*.go*
+*.md

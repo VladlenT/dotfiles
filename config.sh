@@ -14,7 +14,7 @@ alias ?=duckduckgo
 
 # Ignore duplicates in command history
 export HISTCONTROL=ignoredups
-export PS1="\[\033[0;32m\]$\[\033[0m\] "
+export PS1="\[\033[1;34m\]\W\[\033[0m\]\$ "
 
 # adding 'scripts' dir to PATH
 export PATH=$PWD/scripts:$PATH

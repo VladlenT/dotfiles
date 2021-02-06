@@ -2,7 +2,7 @@ colorscheme pablo
 set number   " turn on line numbers
 set background=dark
 set noswapfile
-set nobackup
+set nobackup 
 set autowrite " autowrite command is used to save the changes done in the files automatically while closing the files
 set autoindent  " take indent for new line from previous line
 set copyindent  " make 'autoindent' use existing indent structure

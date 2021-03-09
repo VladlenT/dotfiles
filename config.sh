@@ -8,7 +8,7 @@ unalias -a
 umask 0002
 
 alias cl=clear
-alias ll="ls -lA"
+alias ll="ls -lAF"
 alias vi=vim
 
 # Ignore dupliactes in command history

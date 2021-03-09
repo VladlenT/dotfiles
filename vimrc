@@ -9,6 +9,7 @@ set copyindent  " make 'autoindent' use existing indent structure
 set smartindent  " smart autoindenting for C programs
 set expandtab  " use spaces when <Tab> is inserted
 set tabstop=4  " number of spaces that <Tab> in file uses
+set shiftwidth=4 " number of spaces to use for each step of (auto)indent
 set splitright  " new window is put right of the current one
 set spell  " enable spell checking
 set antialias  " Mac OS X: use smooth, antialiased fonts

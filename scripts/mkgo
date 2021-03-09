@@ -1,0 +1,45 @@
+#!/bin/bash
+LONG_ARGS='skip-test,package:'
+SHORT_ARGS='sp:'
+
+ARGS=$(getopt --options "$SHORT_ARGS" --longoption "$LONG_ARGS" -- "$@")
+eval set -- $ARGS
+
+skip_test=false
+filename=${!#}
+package_name="$filename"
+
+while true; do
+    case "$1" in
+        -s|--skip-test)
+            skip_test=true
+            shift ;;
+        -p|--package)
+            package_name="$2"
+            shift 2 ;;
+        --) shift ; break ;;
+    esac
+done
+
+create_file () {
+    # ignore filenames that start with symbols
+    if [[ "$1" =~ ^- ]]; then
+        echo filename "$1" should not start with '-'
+        exit 1
+    fi
+
+    local name="$1".go
+    printf "package $package_name" > "$name"
+
+    if [[ $filename == 'main' ]]; then
+        printf "\n\nfunc main() {\n\n}\n" >> "$name"
+    fi
+}
+
+create_file "$filename"
+
+
+if ! $skip_test; then
+    create_file "$filename"_test
+fi
+

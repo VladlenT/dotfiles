@@ -8,8 +8,12 @@ unalias -a
 umask 0002
 
 alias cl=clear
-alias ll="ls -lAF"
+alias ll="ls -lAF --color=auto"
+alias ls="ls -h --color=auto"
 alias vi=vim
+alias df="df -h"
+alias grep="grep --color=auto"
+alias free="free -h"
 
 # Ignore dupliactes in command history
 export HISTCONTROL=ignoredups

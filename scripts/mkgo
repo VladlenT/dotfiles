@@ -24,14 +24,14 @@ done
 create_file () {
     # ignore filenames that start with symbols
     if [[ "$1" =~ ^- ]]; then
-        echo filename "$1" should not start with '-'
+		    echo filename "$1" shouldn\'t start with '-'
         exit 1
     fi
 
     local name="$1".go
     printf "package $package_name" > "$name"
 
-    if [[ $filename == 'main' ]]; then
+    if [[ $package_name == 'main' ]]; then
         printf "\n\nfunc main() {\n\n}\n" >> "$name"
     fi
 }

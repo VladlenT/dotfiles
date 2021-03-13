@@ -1,12 +1,14 @@
 #!/bin/bash
-LONG_ARGS='skip-test,package:'
-SHORT_ARGS='sp:'
+LONG_ARGS='skip-test,no-dir,dirname:package:'
+SHORT_ARGS='sndp:'
 
 ARGS=$(getopt --options "$SHORT_ARGS" --longoption "$LONG_ARGS" -- "$@")
 eval set -- $ARGS
 
+no_dir=false
 skip_test=false
 filename=${!#}
+dir_name="$filename"
 package_name="$filename"
 
 while true; do
@@ -14,12 +16,23 @@ while true; do
         -s|--skip-test)
             skip_test=true
             shift ;;
+        -n|--no-dir)
+            no_dir=true
+            shift ;;
         -p|--package)
             package_name="$2"
+            shift 2 ;;
+        -d|--dirname)
+            dir_name="$2"
             shift 2 ;;
         --) shift ; break ;;
     esac
 done
+
+if ! $no_dir; then
+  mkdir "$dir_name"
+  filename="$dir_name/$filename"
+fi
 
 create_file () {
     # ignore filenames that start with symbols
@@ -28,16 +41,15 @@ create_file () {
         exit 1
     fi
 
-    local name="$1".go
-    printf "package $package_name" > "$name"
+    local name="$1.go"
+    print "package $package_name" > "$name"
 
     if [[ $package_name == 'main' ]]; then
-        printf "\n\nfunc main() {\n\n}\n" >> "$name"
+        print "\n\nfunc main() {\n\n}\n" >> "$name"
     fi
 }
 
 create_file "$filename"
-
 
 if ! $skip_test; then
     create_file "$filename"_test

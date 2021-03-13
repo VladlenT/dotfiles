@@ -30,7 +30,9 @@ while true; do
 done
 
 if ! $no_dir; then
-  mkdir "$dir_name"
+  if [[ ! -d "$dir_name" ]]; then
+    mkdir "$dir_name"
+  fi
   filename="$dir_name/$filename"
 fi
 
@@ -42,10 +44,10 @@ create_file () {
     fi
 
     local name="$1.go"
-    print "package $package_name" > "$name"
+    printf "package %s""$package_name" > "$name"
 
     if [[ $package_name == 'main' ]]; then
-        print "\n\nfunc main() {\n\n}\n" >> "$name"
+        printf "\n\nfunc main() {\n\n}\n" >> "$name"
     fi
 }
 

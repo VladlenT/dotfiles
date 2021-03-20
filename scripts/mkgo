@@ -29,6 +29,11 @@ while true; do
     esac
 done
 
+if [[ $filename == 'main' ]]; then
+    skip_test=true
+    no_dir=true
+fi
+
 if ! $no_dir; then
   if [[ ! -d "$dir_name" ]]; then
     mkdir "$dir_name"

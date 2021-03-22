@@ -23,5 +23,5 @@ export DOTFILES=/mnt/sda1/repos/github.com/VladlenT/dotfiles
 export GOPATH=/mnt/sda1/_projects/_go/_workspace
 
 export PATH=$DOTFILES/scripts:$PATH
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/mnt/sda1/_projects/_go/_workspace/bin
 

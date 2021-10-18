@@ -19,10 +19,6 @@ alias free="free -h"
 export HISTCONTROL=ignoredups
 export PS1="\[\033[1;34m\]\W\[\033[0m\]\$ "
 
-export DOTFILES=/mnt/sda1/repos/github.com/VladlenT/dotfiles
-export GOPATH=/mnt/sda1/_projects/_go/_workspace
-
+export DOTFILES=~/repos/github.com/VladlenT/dotfiles
 export PATH=$DOTFILES/scripts:$PATH
-export PATH=$PATH:/usr/local/go/bin:/mnt/sda1/_projects/_go/_workspace/bin
-
 export CHROME_BIN=/usr/bin/vivaldi

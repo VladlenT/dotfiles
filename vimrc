@@ -1,5 +1,5 @@
 colorscheme pablo
-set number   " turn on line numbers
+set relativenumber number   " turn on line numbers
 set background=dark
 set noswapfile
 set nobackup 
